@@ -1,0 +1,54 @@
+<html >
+<head>
+
+<title>BSHMN Gas Solutions</title>
+
+
+<style> 
+      blink {
+      color: #1c87c9;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: sans-serif;
+      
+      }
+    </style>
+
+</head>
+
+<body>
+
+  <div class="header">
+  <img src="assets/images/flame.jpeg" alt="logo" />
+  <h1>Ignite</h1>
+</div>
+<br>
+<div class="topnav">
+  <button class="buton" value="submit" (click) = home()><span>Home</span></button>
+  <button class="buton" value="submit" (click) = Pro()><span>Products</span></button>
+  <button class="buton" value="submit" (click) = contact()><span>ContactUs</span></button>
+  <button class="buton" value="submit" (click) = about()><span>AboutUs</span></button>
+
+</div>
+<div>
+    <form [formGroup]="addForm" class="box"   (ngSubmit)="doValidate(addForm.value)" >
+        
+	  
+                
+        
+                            
+                               
+                <h2>Cylinder Refill</h2>
+              <input type="text"  placeholder="Enter Pin Code" name="pincode" formControlName="pincode" required maxlength=6  > 
+              
+            <input type="submit" [disabled]="!addForm.valid" value="submit"  />
+            <!-- pincode is {{code}} -->
+
+                            
+                        
+</form> 
+</div>
+          
+     
+</body>
+</html>

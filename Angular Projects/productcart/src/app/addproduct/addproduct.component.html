@@ -1,0 +1,56 @@
+<div class="bg_color">
+    <div class="header">
+        <img src="assets/images/flame.jpeg" alt="logo" />
+        <h1>Ignite</h1>
+      </div>
+      <br>
+      <div class="topnav">
+        <button class="buton1" value="submit" (click) = home()><span>Home</span></button>
+        <button class="buton1" value="submit" (click) = Pro()><span>Products</span></button>
+        <button class="buton1" value="submit" (click) = contact()><span>ContactUs</span></button>
+        <button class="buton1" value="submit" (click) = about()><span>AboutUs</span></button>
+      
+      </div>
+
+    <div class="add_margin header_">
+
+        <h3>Product Details</h3>
+    <form [formGroup]="addform">
+        <div class="input_margin">
+            <span *ngIf="productName == 'Cylinder'"><img src="assets/images/download.jpg" alt=""></span>
+            <span *ngIf="productName == 'Stove'"><img src="assets/images/stove.jpg" alt=""></span>
+            <span *ngIf="productName == 'Regulator'"><img src="assets/images/regulator.jpg" alt=""></span>
+            <span *ngIf="productName == 'Lighter'"><img src="assets/images/lighter.jpg" alt=""></span>
+        </div>
+
+        <div class="input_margin">
+
+            <label>Product Name</label>
+            <input type="text" name="pname"   formControlName="pname" readonly>
+
+        </div>
+        <div class="input_margin">
+
+            <label>Product Price</label>
+            <input type="text" name="price" formControlName="price" readonly>
+
+        </div>
+
+        <div class="input_margin">
+
+            <label>Product Quantity</label>
+            <input type="text" name="quantity"  required formControlName="quantity" required (blur)="calculatePrice($event.target.value)" >
+
+        </div>
+
+        <div class="input_margin">
+
+            <label>Total Cost</label>
+            <input type="text" name="total" value="0" formControlName="total" readonly>
+
+        </div>
+        <button class="buton_" (click) =addProduct() >Order Now</button>
+        <button class="buton_" routerLink="/productdetails">Goto ProductDetails</button>
+    </form>
+</div>
+</div>

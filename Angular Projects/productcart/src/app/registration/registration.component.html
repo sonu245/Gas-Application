@@ -1,0 +1,113 @@
+<div class="header">
+  <img src="assets/images/flame.jpeg" alt="logo" />
+  <h1>Ignite</h1>
+</div>
+<br>
+<div class="topnav">
+  <button class="buton" value="submit" (click) = home()><span>Home</span></button>
+  <button class="buton" value="submit" (click) = Pro()><span>Products</span></button>
+  <button class="buton" value="submit" (click) = contact()><span>ContactUs</span></button>
+  <button class="buton" value="submit" (click) = about()><span>AboutUs</span></button>
+
+</div>
+<div >
+  
+
+    <form #myform="ngForm"  (ngSubmit)="registerNow(myform)"  style="max-width:500px;margin:auto"  ngNativeValidate>
+      <div class="form-group">
+        <label for="cname"><b>User Name</b></label>
+        <div class="input-container">
+          <i class="fa fa-user icon"></i>
+        <input type="text" class="form-control" id="cname" [(ngModel)]="register.cname" name="cname" placeholder="Enter your full name" required minlength=4 maxlength=20 >
+        </div>
+      </div>
+  
+      
+      
+  
+      <div class="form-group">
+  
+        <label for="aadhar"><b>Aadhar Number</b></label>
+        <div class="input-container">
+          <i class="fa fa-id-card icon"></i>
+        <input type="text" class="form-control" id="aadhar" required [(ngModel)]="register.aadhar" name="aadhar" placeholder="8 digits" minlength=8 maxlength=8>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cemail"><b>Email ID:</b></label>
+        <div class="input-container">
+          <i class="fa fa-envelope icon"></i>
+        <input type="email" class="form-control" id="cemail" required [(ngModel)]="register.cemail" name="cemail" placeholder="Ex:abcd@gmail.com" >
+        </div>
+      </div>
+  
+      <div class="form-group">
+          <label for="cphone"><b>Phone Number:</b></label>
+          <div class="input-container">
+            <i class="fa fa-phone icon"></i>
+          <input type="text" class="form-control" id="cphone"  [(ngModel)]="register.cphone" name="cphone"  placeholder="8 digits" minlength="8"   maxlength=8
+          min="0" 
+          max="100" 
+          required >
+          </div>
+      </div>
+  
+      <div class="form-group">
+          <label for="cpassword"><b>Password:</b></label>
+          <div class="input-container">
+            <i class="fa fa-key icon"></i>
+          <input type="password" class="form-control" id="cpassword" required [(ngModel)]="register.cpassword" name="cpassword" minlength=7 maxlength="20">
+            </div>
+        </div>
+      
+  
+      <div class="form-group">
+          <label for="gasCategory"><b>Gas Category:</b></label>
+          <input type="radio" class="form-control" value="Domestic"  [(ngModel)]="register.gasCategory" name="Domestic">Domestic
+          <input type="radio" class="form-control" value="Commercial"  [(ngModel)]="register.gasCategory" name="Commercial">Commercial
+      </div>
+      <br/> 
+      <div class="form-group">
+          <label for="state"><b>State</b></label>
+          <div class="input-container">
+      <i class="fa fa-map-marker icon"></i>
+          <input type="text" class="form-control" id="state" required [(ngModel)]="address.state" name="state" minlength=2>
+        </div>
+        </div>   
+  
+      <div class="form-group">
+            <label for="district"><b>District</b></label>
+            <div class="input-container">
+              <i class="fa fa-map-signs icon"></i>
+            <input type="text" class="form-control" id="district" required [(ngModel)]="address.district" name="district" minlength=2>
+              </div>
+          </div>
+    
+      <div class="form-group">
+            <label for="locality"><b>Locality</b></label>
+            <div class="input-container">
+              <i class="fa fa-location-arrow  icon"></i>
+            <input type="text" class="form-control" id="locality" required [(ngModel)]="address.locality" name="locality" minlength=2>
+              </div>
+          </div>
+  
+      <div class="form-group">
+          <label for="pincode"><b>Pincode</b></label>
+          <div class="input-container">
+            <i class="fa fa-map-pin icon"></i>
+          <input type="text" class="form-control" id="pincode" required [(ngModel)]="address.pincode" name="pincode" placeholder="6 digits" minlength=6 maxlength=6>
+            </div>
+        </div>
+        <div>
+          <h3 style="text-align: center;">{{message}}</h3>
+        </div> 
+  
+      <button type="submit" class="btn btn-success"  ><b>Submit</b></button>
+    </form>
+    
+    
+  
+  </div>
+  
+  

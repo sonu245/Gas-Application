@@ -1,0 +1,47 @@
+
+<div class="bg_color">
+    <div class="margin_">
+
+        <div class="header">
+            <img src="assets/images/flame.jpeg" alt="logo" />
+            <h1>Ignite</h1>
+          </div>
+          <br>
+          <div class="topnav">
+            <button class="buton1" value="submit" (click) = home()><span>Home</span></button>
+            <button class="buton1" value="submit" (click) = Pro()><span>Products</span></button>
+            <button class="buton1" value="submit" (click) = contact()><span>ContactUs</span></button>
+            <button class="buton1" value="submit" (click) = about()><span>AboutUs</span></button>
+          
+          </div>
+        <h2>Your Order Placed Successfully</h2>
+        <h3>Order Details</h3>
+        <button class="button_" routerLink="/productdetails">Goto ProductDetails</button>
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th>Total Cost</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let item of cartlist; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{item.pname}}</td>
+                    <td>${{item.price}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.cost}}</td>
+                    <td><button class="button_" (click)=deleteById(item.id)>Delete Order</button></td>
+                </tr>
+                <tr *ngIf=!cartlist>
+                    <td colspan="5">No data found</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>

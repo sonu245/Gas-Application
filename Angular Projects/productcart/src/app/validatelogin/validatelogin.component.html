@@ -1,0 +1,40 @@
+
+
+    <body contenteditable="false">
+
+      <div class="header">
+        <img src="assets/images/flame.jpeg" alt="logo" />
+        <h1>Ignite</h1>
+      </div>
+      <br>
+      <div class="topnav">
+          <button class="buton" value="submit" (click) = home()><span>Home</span></button>
+        <button class="buton" value="submit" (click) = Pro()><span>Products</span></button>
+        <button class="buton" value="submit" (click) = contact()><span>ContactUs</span></button>
+        <button class="buton" value="submit" (click) = about()><span>AboutUs</span></button>
+      
+      </div>
+      
+        <h2 align="center">Login Form</h2>
+        
+        <form  [formGroup] ="form" (ngSubmit) ="onSubmit(form.value,form.value)">
+          <div class="imgcontainer">
+          </div>
+                <table align="center" >
+                <tr>
+                    <td><label path="userName"><b>UserName</b></label></td>
+                       <td> <input type="text" placeholder="Enter Username"   name="userName"  formControlName="userName" required /></td>
+            </tr>
+            <tr>
+                        <td><label path="password"><b>Password</b></label></td>
+                       <td> <input type="password" placeholder="Enter Password"  name="password" formControlName="password" required /></td>
+                       <p align ="center"></p>
+               </tr>
+               <tr>
+               <td><button class="button1" type="reset" value="Login" > Reset </button></td>
+               <td><button class="button1" type="SUBMIT"  value="Login" > Login </button></td>
+               </tr>
+               </table>
+               
+            </form>
+</body>

@@ -1,0 +1,44 @@
+<div class="bg_color">
+    <div class="margin_">
+
+        <div class="header">
+            <img src="assets/images/flame.jpeg" alt="logo" />
+            <h1>Ignite</h1>
+          </div>
+          <br>
+          <div class="topnav">
+            <button class="buton" value="submit" (click) = home()><span>Home</span></button>
+            <button class="buton" value="submit" (click) = Pro()><span>Products</span></button>
+            <button class="buton" value="submit" (click) = contact()><span>ContactUs</span></button>
+            <button class="buton" value="submit" (click) = about()><span>AboutUs</span></button>
+          
+          </div>
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr *ngFor = "let item of prolist">
+                    <td>{{item.pid}}</td>
+                    <td>{{item.pname}}</td>
+                    <td>${{item.pprice}}</td>
+                    <td>
+                        <span *ngIf = "item.pname=='Cylinder'"><img src="assets/images/download.jpg" alt="" class="_img"></span>
+                        <span *ngIf = "item.pname=='Stove'"><img src="assets/images/stove.jpg" alt="" class="_img"></span>
+                        <span *ngIf = "item.pname=='Regulator'"><img src="assets/images/regulator.jpg" alt="" class="_img"></span>
+                        <span *ngIf = "item.pname=='Lighter'"><img src="assets/images/lighter.jpg" alt="" class="_img"></span>
+                    </td>
+                    <td><button class="button_" (click) = getId(item.pid)>Add to Cart</button></td>
+                </tr>
+                    
+            </tbody>
+        </table>
+    </div>
+</div>

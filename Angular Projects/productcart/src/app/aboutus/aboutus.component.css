@@ -49,4 +49,10 @@
     cursor: pointer;
     margin: 5px;
   }
+  .add_margin {
+    margin: 100px;
+  }
   
+  .header_ {
+    text-align: center;
+  }
